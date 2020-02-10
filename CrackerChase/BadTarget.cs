@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace CrackerChase
 {
@@ -9,6 +10,13 @@ namespace CrackerChase
             base(inScreenWidth, inScreenHeight, inSpriteTexture, inDrawWidth, inRestX, inResetY)
         {
             Score = -100;
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            rectangle.X = (int)Math.Round(xPosition);
+            rectangle.Y = (int)Math.Round(yPosition);
+            spriteBatch.Draw(texture, rectangle, Color.Red);
         }
     }
 }
