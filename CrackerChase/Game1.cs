@@ -137,6 +137,13 @@ namespace CrackerChase
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            CheckInput();
+
+            base.Update(gameTime);
+        }
+
+        private void CheckInput()
+        {
             KeyboardState keys = Keyboard.GetState();
 
             if (playing)
@@ -211,12 +218,10 @@ namespace CrackerChase
                     Exit();
                 }
             }
-
-            base.Update(gameTime);
         }
 
-        
-        
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
