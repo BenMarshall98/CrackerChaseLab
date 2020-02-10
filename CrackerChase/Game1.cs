@@ -108,6 +108,13 @@ namespace CrackerChase
                 crackers.Add(cracker);
             }
 
+            for (int i = 0; i < 10; i++)
+            {
+                cracker = new BadTarget(screenWidth, screenHeight, crackerTexture, crackerWidth, 0, 0);
+                gameSprites.Add(cracker);
+                crackers.Add(cracker);
+            }
+
             int cheeseWidth = screenWidth / 15;
             cheese = new Mover(screenWidth, screenHeight, cheeseTexture, cheeseWidth, screenWidth / 2, screenHeight / 2, 500, 500);
             gameSprites.Add(cheese);
@@ -189,7 +196,7 @@ namespace CrackerChase
                     {
                         BurpSound.Play();
                         t.Reset();
-                        score = score + 10;
+                        score = score + t.Score;
                     }
                 }
 
